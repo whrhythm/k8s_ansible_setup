@@ -1,0 +1,10 @@
+---
+
+- name: 拷贝etcd 配置文件到Node端
+  template: src=n_etcd.j2 dest=/etc/etcd/etcd.conf
+
+- name: 拷贝config 配置文件到Node端
+  template: src=config.j2 dest=/etc/kubernetes/config
+
+- name: 拷贝kubelet 配置文件到Node端
+  template: src=kubelet.j2 dest=/etc/kubernetes/kubelet

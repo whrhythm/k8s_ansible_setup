@@ -1,0 +1,4 @@
+---
+
+- name: 启动ETCD服务器
+  service: name=etcd state=restarted

@@ -1,0 +1,36 @@
+
+- hosts: all
+  gather_facts: false
+  roles:
+    - k8s_common
+
+- hosts: master
+  gather_facts: false
+  roles:
+    - k8s_master
+
+- hosts: node1
+  gather_facts: false
+  roles:
+    - k8s_node1
+
+- hosts: etcd
+  gather_facts: false
+  roles:
+    - k8s_etcd
+
+- hosts: all
+  gather_facts: false
+  roles:
+    - k8s_common_service
+
+- hosts: master
+  gather_facts: false
+  roles:
+    - k8s_master_service
+
+- hosts: node1
+  gather_facts: false
+  roles:
+    - k8s_node1_service
+

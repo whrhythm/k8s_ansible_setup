@@ -1,0 +1,8 @@
+---
+
+- name: 启动服务
+  systemd: name={{ item }} state=started
+  with_items:
+    - kube-proxy
+    - kubelet
+

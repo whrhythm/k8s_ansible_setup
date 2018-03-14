@@ -1,0 +1,11 @@
+---
+
+- name: 启动服务
+  systemd: name={{ item }} state=restarted
+  with_items:
+    - kube-proxy
+    - kube-apiserver
+    - kube-controller-manager
+    - kube-scheduler
+  tags: master
+

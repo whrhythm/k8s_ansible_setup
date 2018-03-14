@@ -1,0 +1,18 @@
+---
+
+- name: YUM安装docker\etcd\flannel\ntp\kubernetes 服务
+  yum: name={{ item }} state=latest
+  with_items:
+    - docker
+    - flannel
+    - etcd
+    - ntp
+    - kubernetes
+
+- name: 拷贝flanneld 配置文件
+  template: src=flanneld.j2 dest=/etc/sysconfig/flanneld
+ 
+- name: 启动NTP服务
+  service: name={{ item }} state=started
+  with_items:
+    - ntpd

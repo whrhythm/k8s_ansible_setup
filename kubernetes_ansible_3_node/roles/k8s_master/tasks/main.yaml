@@ -1,0 +1,11 @@
+---
+
+- name: 拷贝etcd 配置文件到Master端
+  template: src=s_etcd.j2 dest=/etc/etcd/etcd.conf
+
+- name: 拷贝config 配置文件到Master端
+  template: src=config.j2 dest=/etc/kubernetes/config
+
+- name: 拷贝kube-apiserver 配置文件到Master端
+  template: src=apiserver.j2 dest=/etc/kubernetes/apiserver
+
